@@ -5,6 +5,7 @@ export default function Navigation() {
         { name: "Home", href: "/" },
         { name: "About", href: "#" },
         { name: "Contact", href: "#" },
+        { name: "Help", href: "#" },
     ];
     return (
         <header>
@@ -27,7 +28,7 @@ export default function Navigation() {
                             <ul className="flex items-center gap-10 text-xl">
                                 {NavLinks.map((link) => (
                                     <li key={link.name}>
-                                        <a className="text-gray-500 transition hover:text-gray-500/75" href={link.href}>
+                                        <a className="text-gray-500 transition hover:text-gray-500/75 tracking-wide" href={link.href}>
                                             {link.name}
                                         </a>
                                     </li>
@@ -39,7 +40,7 @@ export default function Navigation() {
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
                             <a
-                                className="rounded-md bg-teal-600 px-8 py-2.5 text-medium font-medium text-white shadow"
+                                className="rounded-md bg-teal-600 px-8 py-2.5 text-medium font-medium text-white shadow tracking-wide"
                                 href="/login"
                             >
                                 Login
