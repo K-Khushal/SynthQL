@@ -38,7 +38,7 @@ export default function Navigation() {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <div className="sm:flex sm:gap-4">
+                        <div className="sm:flex sm:gap-4 hover:cursor-pointer">
                             <a
                                 className="rounded-md bg-teal-600 px-8 py-2.5 text-medium font-medium text-white shadow tracking-wide"
                                 href="/login"
