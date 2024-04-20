@@ -2,13 +2,13 @@ import React from "react";
 export default function Navigation() {
 
     const NavLinks = [
-        { name: "Home", href: "#" },
+        { name: "Home", href: "/" },
         { name: "About", href: "#" },
         { name: "Contact", href: "#" },
     ];
     return (
-        <header className="">
-            <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+        <header>
+            <div className="px-0 sm:px-6 lg:px-8 pt-2">
                 <div className="flex h-16 items-center justify-between">
                     <div className="md:flex md:items-center md:gap-12">
                         <a className="block text-teal-600" href="#">
@@ -24,7 +24,7 @@ export default function Navigation() {
 
                     <div className="hidden md:block">
                         <nav aria-label="Global">
-                            <ul className="flex items-center gap-6 text-xl">
+                            <ul className="flex items-center gap-10 text-xl">
                                 {NavLinks.map((link) => (
                                     <li key={link.name}>
                                         <a className="text-gray-500 transition hover:text-gray-500/75" href={link.href}>
@@ -39,20 +39,11 @@ export default function Navigation() {
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4">
                             <a
-                                className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                                href="#"
+                                className="rounded-md bg-teal-600 px-8 py-2.5 text-medium font-medium text-white shadow"
+                                href="/login"
                             >
                                 Login
                             </a>
-
-                            <div className="hidden sm:flex">
-                                <a
-                                    className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                                    href="#"
-                                >
-                                    Register
-                                </a>
-                            </div>
                         </div>
 
                         <div className="block md:hidden">
