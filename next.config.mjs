@@ -4,7 +4,7 @@ const nextConfig = {
         return [
             {
                 source: '/',
-                destination: 'https://www.text2sql.ai/api/sql/generate',
+                destination: 'https://www.text2sql.ai',
             },
         ]
     },

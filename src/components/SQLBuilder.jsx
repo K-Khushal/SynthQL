@@ -15,13 +15,23 @@ function SQLBuilder() {
                 schema: "Items (id, ..."
             };
 
-            const response = await axios.post('/api/sql/', data);
+            const response = await axios.post('/api/sql/generate', data, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer 848a0599a9b47e36e7be9f782c3fa285004a16656199b73e43b619ea390b814a'
+                },
+                maxBodyLength: Infinity
+            });
+
+            response.setHeader('Access-Control-Allow-Origin', '*');
+            response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+
             setSqlQuery(response.data);
         } catch (error) {
             console.error('Error:', error);
             setSqlQueryError("Error generating SQL query.")
         }
-    }
+    };
 
 return (
     <div className="flex flex-col justify-center items-center text-white">

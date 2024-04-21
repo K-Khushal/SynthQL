@@ -2,7 +2,7 @@
   "name": "synth-ql",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://www.text2sql.ai/api/sql/generate",
+  "proxy": "https://www.text2sql.ai",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
