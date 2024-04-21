@@ -1,3 +1,4 @@
+import { UserButton } from "@clerk/nextjs";
 
 export default function SideNavbar() {
     return (
@@ -6,7 +7,7 @@ export default function SideNavbar() {
                 <img src="https://source.unsplash.com/100x100/?portrait" alt=""
                      className="w-12 h-12 rounded-full dark:bg-gray-500"/>
                 <div>
-                    <h2 className="text-lg font-semibold">Leroy Jenkins</h2>
+                    <h2 className="text-lg font-semibold"><UserButton/></h2>
                     <span className="flex items-center space-x-1">
 				<a rel="noopener noreferrer" href="#" className="text-sm hover:underline dark:text-gray-600">View profile</a>
 			</span>

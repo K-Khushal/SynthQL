@@ -1,3 +1,4 @@
+import { SignInButton } from "@clerk/nextjs";
 import React from "react";
 export default function Navigation() {
 
@@ -39,12 +40,12 @@ export default function Navigation() {
 
                     <div className="flex items-center gap-4">
                         <div className="sm:flex sm:gap-4 hover:cursor-pointer">
-                            <a
+                            <SignInButton 
                                 className="rounded-md bg-teal-600 px-8 py-2.5 text-medium font-medium text-white shadow tracking-wide"
                                 href="/login"
                             >
                                 Login
-                            </a>
+                            </SignInButton>
                         </div>
 
                         <div className="block md:hidden">
