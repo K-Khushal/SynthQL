@@ -1,18 +1,20 @@
 import HeroSection from "@/components/HeroSection";
 import SideNavbar from "@/components/SideNavbar";
 import SQLBuilder from "@/components/SQLBuilder";
+import PromptSection from "@/components/PromptSection";
 
 export default function App() {
-  return (
-    <>
-        <main>
-            <div className="h-screen flex flex-row">
-                <SideNavbar/>
-                <div className="p-12">
-                    <SQLBuilder/>
+    return (
+        <>
+            <main className="flex flex-row">
+                <div className="min-h-screen max-h-full w-64">
+                    <SideNavbar/>
                 </div>
-            </div>
-        </main>
-    </>
-  );
+                <div className="flex flex-col justify-center items-center flex-grow p-10">
+                    <SQLBuilder/>
+                    <PromptSection/>
+                </div>
+            </main>
+        </>
+    );
 }

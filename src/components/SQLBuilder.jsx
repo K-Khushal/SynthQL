@@ -8,19 +8,30 @@ function SQLBuilder() {
     const [sqlQueryError, setSqlQueryError] = useState('');
 
     const generateSQLQuery = async () => {
-        try {
-            const data = {
-                prompt: "Find all items with id 1.",
-                type: "mysql",
-                schema: "Items (id, ..."
-            };
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Authorization", "Bearer 848a0599a9b47e36e7be9f782c3fa285004a16656199b73e43b619ea390b814a");
 
-            const response = await axios.post('/api/sql/generate', data);
-            setSqlQuery(response.data);
-        } catch (error) {
-            console.error('Error:', error);
-            setSqlQueryError("Error")
-        }
+        const raw = JSON.stringify({
+            "prompt": "Find all items with id 1.",
+            "type": "mysql",
+            "schema": "Items (id, ..."
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+
+        fetch("https://www.text2sql.ai/api/sql/generate", requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => {
+                console.error('Error:', error);
+                setSqlQueryError('Internal Server Error');
+            });
     };
 
 

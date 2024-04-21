@@ -5,6 +5,10 @@ import axios from 'axios';
 export default async function handler(req, res) {
     console.log('Received request:', req.method, req.url);
 
+    if(req.method === 'GET') {
+        res.status(200).json({ message: 'Hello World' });
+    }
+
     if (req.method === 'POST') {
         try {
             const { data } = await axios.post(
