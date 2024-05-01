@@ -1,27 +1,22 @@
 import {NextRequest, NextResponse} from 'next/server';
-import axios from 'axios';
 
 
 
 // To handle a GET request to /api
 export async function GET(request) {
-    // Do whatever you want
     return NextResponse.json({message: "Hello World"}, {status: 200});
 }
 
 // To handle a POST request to /api
 export async function POST(req,res){
 
-    const requestData = {
-        prompt: 'Find all the employee names and their departments.',
-        type: 'mysql',
-        schema: '',
-    };
+    const requestData = await req.json();
+    console.log(requestData);
 
     const raw = JSON.stringify(requestData);
 
     const apiUrl = 'https://www.text2sql.ai/api/sql/generate';
-    const authToken = 'APIKEY';
+    const authToken = 'YOUR_API_KEY';
 
 
     const myHeaders = new Headers();

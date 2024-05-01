@@ -10,10 +10,9 @@ function SQLBuilder() {
     const generateSQLQuery = async () => {
         try {
             const data = {
-                prompt: 'Find all items with id 1.',
-                type: 'postgres',
-                schema: 'items (id: int, ...)',
-                boosted: false
+                prompt: "Find all items with id 1.",
+                type: "mysql",
+                schema: "Items (id, ..."
             };
 
             const response = await axios.post('/api/sql', data)
