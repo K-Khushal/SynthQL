@@ -22,19 +22,19 @@ export default function Navigation() {
         },
     ];
     return (
-        <nav className="sticky top-0 glass__bg h-16 py-8 px-4 z-10 w-full">
+        <nav className="h-16 py-8 px-4 w-full">
             <div className="container mx-auto flex flex-row justify-between items-center tracking-wider">
-                <a className="font-semibold text-2xl flex items-center" href="/">
+                <a className="font-semibold text-3xl flex items-center" href="/">
                     SynthQL
                 </a>
-                <div className="flex items-center gap-5 text-2xl font-medium">
+                <div className="flex items-center justify-between gap-5 text-2xl font-medium">
                     {SocialLinks.map((link,index) => (
                         <a
                             key={index}
                             href={link.href}
                             target="_blank"
                             rel="noreferrer"
-                            className="text-gray-500 font-medium text-xl underline hover:text-white transition-all duration-300"
+                            className="text-gray-500 text-xl hover:text-white transition-all duration-300"
                         >
                             {link.icon}
                         </a>
@@ -42,8 +42,8 @@ export default function Navigation() {
                     ))}
                     <a href="/login">
                         <button
-                            className="relative before:shadow-lg flex h-10 items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-white before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 w-max">
-                            <span className="relative text-xl font-medium text-black flex items-center">
+                            className="relative before:shadow-lg flex py-2 px-8 items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-white before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 w-max">
+                            <span className="relative text-xl font-semibold text-black">
                                 Login
                             </span>
                         </button>
