@@ -17,7 +17,7 @@ function SQLBuilder() {
 
             const response = await axios.post('/api/sql', data)
 
-            setSqlQuery(JSON.stringify(response.data));
+            setSqlQuery(response.data.output);
         } catch (error) {
             console.error('Error:', error);
             setSqlQueryError("Error generating SQL query.")

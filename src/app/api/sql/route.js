@@ -11,12 +11,11 @@ export async function GET(request) {
 export async function POST(req,res){
 
     const requestData = await req.json();
-    console.log(requestData);
 
     const raw = JSON.stringify(requestData);
 
     const apiUrl = 'https://www.text2sql.ai/api/sql/generate';
-    const authToken = 'YOUR_API_KEY';
+    const authToken = '85b4f70d2b2204513d739d9d00b905b684c882814d7ef7cd23e203c5ca1c52de';
 
 
     const myHeaders = new Headers();
@@ -43,6 +42,6 @@ export async function POST(req,res){
         }
     } catch (error) {
         console.error(error);
-        return NextResponse.json({ error: error.toString() });
+        return NextResponse.json({ error: error.toString() }, { status: 500 });
     }
 }
