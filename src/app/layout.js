@@ -1,28 +1,22 @@
 import {Yanone_Kaffeesatz} from "next/font/google";
 import "./globals.css";
-import {Providers} from "@/app/Providers";
-import { ClerkProvider } from '@clerk/nextjs'
-import {LayoutProvider} from "@/app/LayoutProvider";
+import {ClerkProvider} from '@clerk/nextjs'
 
-const inter = Yanone_Kaffeesatz({ subsets: ["latin"] });
+const inter = Yanone_Kaffeesatz({subsets: ["latin"]});
 
 export const metadata = {
-  title: "SynthQL",
-  description: "An AI SQL Query builder",
+    title: "SynthQL",
+    description: "An AI SQL Query builder",
 };
 
-export default function RootLayout({ children }) {
-  return (
-    <ClerkProvider>
-    <html lang="en" className="bg-[#121212]">
-      <body className={`${inter.className} bg-[#121212] text-white dark`}>
-      <Providers>
-        <LayoutProvider>
-      {children}
-        </LayoutProvider>
-      </Providers>
-      </body>
-    </html>
-    </ClerkProvider>
-  );
+export default function RootLayout({children}) {
+    return (
+        <ClerkProvider>
+            <html lang="en" className="bg-[#121212] text-white">
+            <body className={`${inter.className}`}>
+            {children}
+            </body>
+            </html>
+        </ClerkProvider>
+    );
 }

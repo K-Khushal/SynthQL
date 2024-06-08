@@ -40,7 +40,7 @@ export default function Navigation() {
                         </a>
 
                     ))}
-                    <a href="/login">
+                    <a href="/sign-in">
                         <button
                             className="relative before:shadow-lg flex py-2 px-8 items-center justify-center before:absolute before:inset-0 before:rounded-full before:bg-white before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 w-max">
                             <span className="relative text-xl font-semibold text-black">
